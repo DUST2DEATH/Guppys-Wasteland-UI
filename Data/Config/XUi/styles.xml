@@ -32,6 +32,7 @@
 	<global>
 		<!-- Begin Named Wasteland Styles -->
 		<style_entry name="servertext" value="Guppy's Wasteland UI"/>
+		<style_entry name="xpcolor" value="255,255,0,255"/>
 		<!-- End Named Wasteland Styles -->
 		<!-- 	
 			GLOBAL STYLE ENTRIES

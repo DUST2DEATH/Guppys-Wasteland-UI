@@ -84,6 +84,7 @@
 		<window_group name="compass">
 			<window name="windowCompass" /><!-- modded -->
 			<window name="windowTime" /><!-- added -->
+			<!-- <window name="windowXP" /> --><!-- added -->
 		</window_group>
 		
 		<window_group name="toolTip">

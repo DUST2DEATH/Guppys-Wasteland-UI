@@ -34,6 +34,39 @@
 			<label depth="2" name="TextContent" pos="-180,-25" font_size="28" color="[white]" justify="center" text="[servertext]" height="30" width="164"  effect="outline"/>
 		</rect>
 	</window>
+	
+	<window name="windowXP" anchor="LeftTop">
+		<rect name="position" pos="-11,2">
+			<texture name="ItemUnder" depth="1" size="225,13" texture="@http://i.imgur.com/b8rN3GO.png" material="Materials/Transparent Colored" pos="19,-60" />
+			<texture name="ItemMain" depth="4" size="249,79" texture="@http://i.imgur.com/dnU4O8O.png" material="Materials/Transparent Colored" pos="5,0" />
+			<sprite depth="3" width="225" pos="20,-62" height="10" type="filled" color="[xpcolor]" fill="{playerlevelfill}" controller="PlayerStatsWindow" />
+			<label depth="10" name="levelNumber" pos="22,-24" width="30" height="30" text="{playerlevel}" font_size="26" effect="outline" upper_case="true" justify="center" color="[white]" controller="PlayerStatsWindow"/>
+			<!-- <label pos="5,-62" depth="10" width="240" height="30" text="{skillpointsavailable}[-]" font_size="20" color="[white]" effect="outline" justify="center" controller="SkillInfoWindow"/> -->
+		
+			<rect name="positioncoords" controller="MapArea">
+				<panel name="content" depth="10" pos="0,0" height="30" disableautobackground="true">
+					<rect depth="10" name="toolbar" width="300" height="43" pos="0,0">	
+						<button depth="1" name="playerIcon" style="icon32px, press, hover" pivot="center" pos="9999,9999" sprite="ui_game_symbol_map_player_arrow" tooltip="Center on Player" tooltip_key="lblCenterOnPlayer" sound="[paging_click]" />
+						<label depth="10" name="playerPos" pos="40,-24" width="215" height="28" text="110 S 769 W" font_size="26" justify="center" effect="outline"/>
+
+						<button depth="1" name="bedrollIcon" style="icon32px, press, hover" pivot="center" pos="9999,9999" sprite="ui_game_symbol_map_bed" tooltip="Center on Sleeping Bag" tooltip_key="lblCenterOnSleepingBag" sound="[paging_click]" />
+						<label depth="1" name="bedrollPos" pos="9999,9999" width="160" height="28" text="300 N 832 W" font_size="26"/>
+
+						<sprite depth="1" name="cursorIcon" style="icon32px, press, hover" pos="9999,9999" sprite="ui_game_symbol_map_cursor" tooltip="Cursor Position" tooltip_key="lblCursorPosition" sound="[paging_click]"/>
+						<label depth="1" name="cursorPos" pos="9999,9999" width="160" height="28" text="300 N 832 W" font_size="26"/>
+
+						<button depth="1" name="waypointIcon" style="icon32px, hover" pivot="center" on_press="true" pos="9999,9999" sprite="ui_game_symbol_map_waypoint_remove" tooltip="Remove Quick Waypoint" tooltip_key="lblRemoveQuickWaypoint" />
+						<label depth="1" name="waypointDistance" pos="9999,9999" width="122" height="28" text="0.2 KILOMETERS" font_size="26"/>			
+					</rect>
+					<panel name="mapView" depth="1" width="712" height="712" pos="9999,9999" disableautobackground="true" on_drag="true" style="press, scroll, hover" sound="[craft_click]" >
+						<texture depth="2" name="mapViewTexture" width="712" height="712" pos="0,0" material="Materials/MaskableMainmap"/>				
+						<panel name="clippingPanel" depth="1" width="712" height="712" pos="0,0" disableautobackground="true" />
+					</panel>
+				</panel>
+			</rect>
+			
+		</rect>
+	</window>
 	<window name="vehiclestats" anchor="CenterBottom">
 	<rect name="position" pos="-190,70">
 		<rect width="90" height="20" controller="HUDStatBar" stat_type="VehicleBattery" visible="{statvisible}" depth="2">
@@ -83,7 +116,7 @@
 				<texture name="ItemBackground" depth="2" size="188,65" texture="@https://i.imgur.com/vdwAYSI.png" material="Materials/Transparent Colored" pos="0,0"/>
 				<sprite depth="4" name="Icon" atlas="ItemIconAtlas" size="44,40" foregroundlayer="true" pos="135,-13" />
 				<label depth="6" name="TextContent" font_size="28" color="[white]" justify="center" height="30" width="100" effect="outline" pos="20,-18"/>
-				<sprite depth="6" pos="0,16" width="32" height="32" name="Negative" sprite="ui_game_symbol_x" color="[red]" />
+				<sprite depth="6" pos="50,-18" width="32" height="32" name="Negative" sprite="ui_game_symbol_x" color="[red]" />
 			</panel>
 		</rect>
 	
