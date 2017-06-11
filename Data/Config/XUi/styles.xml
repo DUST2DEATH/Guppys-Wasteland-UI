@@ -178,7 +178,6 @@
 	</style>
 	
 	<!--ITEM STACKS-->
-	
 	<style name="itemStack">
 		<style_entry name="select_color" value="[beige]"/>
 		<style_entry name="press_color" value="[limeGreen]"/>
@@ -549,7 +548,7 @@
 		<style_entry name="height" value="23" />
 		<style_entry name="width" value="300" />
 		<style_entry name="pos" value="50, -15" />
-		<style_entry name="color" value="[mediumGrey]"/>
+		<style_entry name="color" value="[iconColor]"/>
 		<style_entry name="tooltip" value="CHARACTER" />
 		<style_entry name="texture" value="Textures/UI/ui_game_compass" />
 	</style>
