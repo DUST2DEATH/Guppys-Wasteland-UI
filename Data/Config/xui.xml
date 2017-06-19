@@ -75,7 +75,7 @@
 			<window name="itemInfoPanel"/>
 			<window name="emptyInfoPanel" />
 			<window name="windowBackpack"/>
-			<window name="windowTime" /><!-- added -->
+			<window name="windowTime" /><!-- added -->								 
 		</window_group>
 		
 		<window_group name="dragAndDrop" actionSet="false">
@@ -85,7 +85,7 @@
 		<window_group name="compass" actionSet="false">
 			<window name="windowCompass" /><!-- modded -->
 			<window name="windowTime" /><!-- added -->
-			<!-- <window name="windowXP" /> --><!-- added -->
+			<!-- <window name="windowXP" /> --><!-- added -->										
 		</window_group>
 		
 		<window_group name="toolTip" actionSet="false">

@@ -80,13 +80,10 @@
 					
 					<sprite depth="3" pos="5,-215" sprite="ui_game_symbol_wet" style="protection"/>
 					<label depth="3" pos="38,-219" name="lblWaterproof" style="protection"/>
-				</rect>
-				
-				
+				</rect>	
 			</rect>
 		</panel>
-			</panel>
-			
+			</panel>	
 		</rect>
 	</window>
 	<window name="vehiclestats" anchor="CenterBottom">
@@ -139,17 +136,18 @@
 				<sprite depth="4" name="Icon" atlas="ItemIconAtlas" size="44,40" foregroundlayer="true" pos="135,-13" />
 				<label depth="6" name="TextContent" font_size="28" color="[white]" justify="center" height="30" width="100" effect="outline" pos="20,-18"/>
 				<sprite depth="6" pos="50,-18" width="32" height="32" name="Negative" sprite="ui_game_symbol_x" color="[red]" />
-			</panel>
+			</panel> 
 		</rect>
 	
 		<grid name="hud" pos="-200,63" rows="2" cols="1" width="200" cell_width="200" cell_height="65" repeat_content="false" side="right">
 			<rect width="200" height="65" controller="HUDStatBar" stat_type="ActiveItem" visible="{statvisible}">
 				<sprite depth="1" pos="0,0"  name="BarContent" sprite="{statimage|once}" height="1" width="1" />
-				<texture name="ItemBackground" depth="2" size="200,65" texture="@https://i.imgur.com/mL9Cnd9.png" material="Materials/Transparent Colored" pos="0,0"/>
-				<sprite depth="4" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon}" size="44,40" pos="145,-10" color="{staticoncolor}" foregroundlayer="true" />
-				<label depth="6" name="TextContent" pos="5,-18" font_size="28" color="[white]" justify="center" text="{statcurrentwithmax}" height="30" width="140" effect="outline" />
+				<texture name="ItemBackground" depth="2" size="200,65" texture="@https://i.imgur.com/mL9Cnd9.png" material="Materials/Transparent Colored" pos="0,0"/>																					   
+				<sprite depth="4" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon}" size="44,40" pos="145,-10" color="{staticoncolor}" foregroundlayer="true" />																														   
+				<label depth="6" name="TextContent" pos="5,-18" font_size="28" color="[white]" justify="center" text="{statcurrentwithmax}" height="30" width="140" effect="outline" />																															 
 			</rect>
 		</grid>	
+  
 	</window>
 	<!-- End Wasteland UI Windows -->
 	
@@ -682,7 +680,7 @@
 		</rect>
 	</window>
 	
-	<!--#$-IGS BEGIN: Adding cursor area. -$#-->
+	
 	<window name="CharacterFrameWindow" width="327" height="704" panel="Left" controller="CharacterFrameWindow" defaultcolor="[white]" hoveredcolor="[selectedColor]" cursor_area="true" >
 	<!--#$-IGS END.-$#-->
 		<panel name="header" height="43" depth="1" backgroundspritename="ui_game_panel_header">			
@@ -1509,9 +1507,11 @@
 				<sprite depth="1" pos="-3,8" width="151" height="91" name="background" color="[mediumGrey]" type="sliced"/> 
 				<grid rows="2" cols="1" pos="0,5" width="144" cell_width="144" cell_height="43" controller="ItemActionList">
 					<skill_action_entry />
-					<skill_action_entry /> 
+					<!-- <skill_action_entry />  -->
 				</grid>
 				<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="-3,8" width="151" height="91" color="[black]" type="sliced" fillcenter="false" />
+				<sprite depth="3" pos="75,-59" width="150" height="43" color="[mediumGrey]" pivot="center" type="sliced" />
+				<label depth="8" pos="75,-59" width="150" height="43" text="{buycost}" pivot="center" justify="center" />
 			</panel>
 			<rect depth="1" pos="148,0" width="454" height="234" >
 				<sprite depth="1" name="background" color="[mediumGrey]" type="sliced"/> 
