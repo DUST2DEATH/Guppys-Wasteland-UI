@@ -75,7 +75,7 @@
 			<window name="itemInfoPanel"/>
 			<window name="emptyInfoPanel" />
 			<window name="windowBackpack"/>
-			<window name="windowTime" /><!-- added -->								 
+			<window name="windowTime" /><!-- added -->
 		</window_group>
 		
 		<window_group name="dragAndDrop" actionSet="false">
@@ -83,9 +83,9 @@
 		</window_group>
 		
 		<window_group name="compass" actionSet="false">
-			<window name="windowCompass" /><!-- modded -->
+			<window name="windowCompass" /><!-- Modded -->
 			<window name="windowTime" /><!-- added -->
-			<!-- <window name="windowXP" /> --><!-- added -->										
+			<!-- <window name="windowXP" /> --><!-- added -->
 		</window_group>
 		
 		<window_group name="toolTip" actionSet="false">
@@ -213,7 +213,7 @@
 			
 		</window_group>
 		
-		<window_group name="powercamera" controller="XUiC_PowerCameraWindowGroup">
+		<window_group name="powercamera" controller="XUiC_PowerCameraWindowGroup" actionSet="controller">
 			<window name="windowPowerCameraControl" />
 			<window name="windowNonPagingHeader" />
 		</window_group>
