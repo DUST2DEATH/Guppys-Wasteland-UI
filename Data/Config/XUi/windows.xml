@@ -1,4 +1,6 @@
 <windows>
+
+
 	<!-- Begin Wasteland UI Windows -->
 	<window name="windowCompass" style="compass.window" controller="CompassWindow">
 		<texture style="compass.window.compass.texture" name="compassTexture" rect_size="0.25,1" rect_offset=".8,0" >
@@ -35,6 +37,70 @@
 			<texture name="ItemBackground" depth="20" size="196,65" texture="@https://i.imgur.com/mgaBqvw.png" material="Materials/Transparent Colored" pos="-195,0" />
 			<label depth="21" name="TextContent" pos="-180,-25" font_size="28" color="[white]" justify="center" text="[servertext]" height="30" width="164"  effect="outline"/>
 		</rect>
+	</window>
+	
+	<window name="HUDLeftStatBars">
+		<rect name="hud" pos="3,110" side="left" controller="BuffPopoutList" pivot="BottomLeft" >
+			<panel width="61" height="52" name="item" visible="false" pivot="right" disableautobackground="true" >
+				<sprite depth="1" pos="0,0"  name="Background" sprite="ui_game_popup" height="1" width="1" pivot="center" flip="Horizontally" color="[transparent]" />
+				<texture name="ItemBackground" depth="2" size="61,52" texture="@https://i.imgur.com/AZ8tQbP.png" material="Materials/Transparent Colored" pos="0,0"/>
+				<sprite depth="4" name="Icon" size="36,32" pos="10,-10" color="[transparent]"/>
+				<label depth="6" name="TextContent" pos="9999,9999" font_size="28" color="[white]" justify="center" height="30" pivot="center"/>
+			</panel>
+		</rect>
+	</window>
+	
+	<window name="HUDRightStatBars">
+		<rect name="hud" pos="-188,72" side="right" controller="CollectedItemList" pivot="BottomLeft">
+			<panel width="168" height="52" name="item" visible="false" disableautobackground="true" pos="0,0" >
+				<sprite depth="1" pos="0,0"  name="Background" sprite="ui_game_popup" height="1" width="1" pivot="center" />
+				<texture name="ItemBackground" depth="2" size="188,65" texture="@https://i.imgur.com/vdwAYSI.png" material="Materials/Transparent Colored" pos="0,0"/>
+				<sprite depth="4" name="Icon" atlas="ItemIconAtlas"  size="44,40" pos="135,-13" foregroundlayer="true"/>
+				<label depth="6" name="TextContent" font_size="28" color="[white]" justify="center" height="30" width="100" effect="outline" pos="20,-18"/>
+				<sprite depth="6" pos="50,-18" width="32" height="32" name="Negative" sprite="ui_game_symbol_x" color="[red]" />
+			</panel>
+		</rect>
+
+		<grid name="hud" pos="-200,63" rows="2" cols="1" width="200" cell_width="200" cell_height="65" repeat_content="false" side="right">
+			<rect width="200" height="65" controller="HUDStatBar" stat_type="ActiveItem" visible="{statvisible}">
+				<sprite depth="1" pos="0,0"  name="BarContent" sprite="{statimage|once}" height="1" width="1" />
+				<texture name="ItemBackground" depth="2" size="200,65" texture="@https://i.imgur.com/mL9Cnd9.png" material="Materials/Transparent Colored" pos="0,0"/>																					   
+				<sprite depth="4" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon}" size="44,40" pos="145,-10" color="{staticoncolor}" foregroundlayer="true" />
+				<label depth="6" name="TextContent" pos="5,-18" font_size="28" color="[white]" justify="center" text="{statcurrentwithmax}" height="30" width="140" effect="outline" />
+			</rect>
+		</grid>
+	</window>
+
+	<window name="windowTime" anchor="LeftBottom" style="time.window" controller="CompassWindow">
+	<rect name="position" pos="0,63">
+		<texture style="time.window.compass.texture" name="compassTexture" rect_size="0.25,1" rect_offset=".8,0" >		
+		</texture>
+		<texture name="ItemBackground" depth="1" size="188,65" texture="@https://i.imgur.com/jYCeubh.png" material="Materials/Transparent Colored" pos="0,0"/>
+		<label depth="5" pos="10,-20" width="40" height="30" text="{day|always}" font_size="28" effect="outline" upper_case="true" justify="center"/>
+		<label depth="5" pos="70,-20" width="100" height="30" text="{time|always}" font_size="28" effect="outline" upper_case="true" justify="center"/>
+	</rect>
+	</window>
+	
+	<window name="vehiclestats" anchor="CenterBottom">
+	<rect name="position" pos="-190,70">
+		<rect width="90" height="20" controller="HUDStatBar" stat_type="VehicleBattery" visible="{statvisible}" depth="2">
+		<texture name="ItemBackground" depth="1" size="296,20" texture="@https://i.imgur.com/87rXQgE.png" material="Materials/Transparent Colored" pos="44,-49"/>
+		<texture name="ItemForeground" depth="3" size="380,76" texture="@https://i.imgur.com/WzM5fPD.png" material="Materials/Transparent Colored" pos="0,0"/>
+				<sprite depth="2" pos="45,-49" name="BarContent" color="[black]" height="20" width="91" type="filled" fill="0" />
+				<sprite depth="4" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon|once}" size="32,32" pos="9999,9999" foregroundlayer="true" />
+				<label depth="6" name="TextContent" pos="45,-49" font_size="20" color="[white]" justify="center" text="{statcurrentwithmax}" height="30" width="90"/>
+			</rect>
+			<rect width="90" height="20" controller="HUDStatBar" stat_type="VehicleFuel" visible="{statvisible}" depth="2">
+				<sprite depth="2" pos="145,-49"  name="BarContent" sprite="{statimage|once}" type="filled" height="20" width="91" flip="Horizontally" />
+				<sprite depth="4" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon|once}" size="32,32" pos="9999,9999" foregroundlayer="true" />
+				<label depth="6" name="TextContent" pos="145,-49" font_size="20" color="[white]" justify="center" text="{statcurrentwithmax}" height="30" width="90"/>
+			</rect>
+			<rect width="90" height="20" controller="HUDStatBar" stat_type="VehicleHealth" visible="{statvisible}" depth="2">
+				<sprite depth="2" pos="245,-49"  name="BarContent" sprite="{statimage|once}" type="filled" height="20" width="91" flip="Horizontally" />
+				<sprite depth="4" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon|once}" size="32,32" pos="9999,9999" foregroundlayer="true" />
+				<label depth="6" name="TextContent" pos="245,-49" font_size="20" color="[white]" justify="center" text="{statcurrentwithmax}" height="30" width="90"/>
+			</rect>
+	</rect>
 	</window>
 	
 	<window name="windowXP" anchor="LeftTop">
@@ -82,76 +148,12 @@
 					<label depth="3" pos="38,-219" name="lblWaterproof" style="protection"/>
 				</rect>	
 			</rect>
+
 		</panel>
 			</panel>	
 		</rect>
 	</window>
 	
-	<window name="vehiclestats" anchor="CenterBottom">
-	<rect name="position" pos="-190,70">
-		<rect width="90" height="20" controller="HUDStatBar" stat_type="VehicleBattery" visible="{statvisible}" depth="2">
-		<texture name="ItemBackground" depth="1" size="296,20" texture="@https://i.imgur.com/87rXQgE.png" material="Materials/Transparent Colored" pos="44,-49"/>
-		<texture name="ItemForeground" depth="3" size="380,76" texture="@https://i.imgur.com/WzM5fPD.png" material="Materials/Transparent Colored" pos="0,0"/>
-				<sprite depth="2" pos="45,-49" name="BarContent" color="[black]" height="20" width="91" type="filled" fill="0" />
-				<sprite depth="4" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon|once}" size="32,32" pos="9999,9999" foregroundlayer="true" />
-				<label depth="6" name="TextContent" pos="45,-49" font_size="20" color="[white]" justify="center" text="{statcurrentwithmax}" height="30" width="90"/>
-			</rect>
-			<rect width="90" height="20" controller="HUDStatBar" stat_type="VehicleFuel" visible="{statvisible}" depth="2">
-				<sprite depth="2" pos="145,-49"  name="BarContent" sprite="{statimage|once}" type="filled" height="20" width="91" flip="Horizontally" />
-				<sprite depth="4" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon|once}" size="32,32" pos="9999,9999" foregroundlayer="true" />
-				<label depth="6" name="TextContent" pos="145,-49" font_size="20" color="[white]" justify="center" text="{statcurrentwithmax}" height="30" width="90"/>
-			</rect>
-			<rect width="90" height="20" controller="HUDStatBar" stat_type="VehicleHealth" visible="{statvisible}" depth="2">
-				<sprite depth="2" pos="245,-49"  name="BarContent" sprite="{statimage|once}" type="filled" height="20" width="91" flip="Horizontally" />
-				<sprite depth="4" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon|once}" size="32,32" pos="9999,9999" foregroundlayer="true" />
-				<label depth="6" name="TextContent" pos="245,-49" font_size="20" color="[white]" justify="center" text="{statcurrentwithmax}" height="30" width="90"/>
-			</rect>
-	</rect>
-	</window>
-	
-	<window name="windowTime" anchor="LeftBottom" style="time.window" controller="CompassWindow">
-	<rect name="position" pos="0,63">
-		<texture style="time.window.compass.texture" name="compassTexture" rect_size="0.25,1" rect_offset=".8,0" >		
-		</texture>
-		<texture name="ItemBackground" depth="1" size="188,65" texture="@https://i.imgur.com/jYCeubh.png" material="Materials/Transparent Colored" pos="0,0"/>
-		<label depth="5" pos="10,-20" width="40" height="30" text="{day|always}" font_size="28" effect="outline" upper_case="true" justify="center"/>
-		<label depth="5" pos="70,-20" width="100" height="30" text="{time|always}" font_size="28" effect="outline" upper_case="true" justify="center"/>
-	</rect>
-	</window>
-	
-	<window name="HUDLeftStatBars">
-		<rect name="hud" pos="3,110" side="left" controller="BuffPopoutList" pivot="BottomLeft" >
-			<panel width="61" height="52" name="item" visible="false" pivot="right" disableautobackground="true" >
-				<sprite depth="1" pos="0,0"  name="Background" sprite="ui_game_popup" height="1" width="1" pivot="center" flip="Horizontally" color="[transparent]" />
-				<texture name="ItemBackground" depth="2" size="61,52" texture="@https://i.imgur.com/AZ8tQbP.png" material="Materials/Transparent Colored" pos="0,0"/>
-				<sprite depth="4" name="Icon" size="36,32" pos="10,-10" color="[transparent]"/>
-				<label depth="6" name="TextContent" pos="9999,9999" font_size="28" color="[white]" justify="center" height="30" pivot="center"/>
-			</panel>
-		</rect>
-	</window>
-
-	<window name="HUDRightStatBars">
-
-		<rect name="hud" pos="-188,72" side="right" controller="CollectedItemList" pivot="BottomLeft">
-			<panel width="168" height="52" name="item" visible="false" disableautobackground="true" pos="0,0" >
-				<sprite depth="1" pos="0,0"  name="Background" sprite="ui_game_popup" height="1" width="1" pivot="center" />
-				<texture name="ItemBackground" depth="2" size="188,65" texture="@https://i.imgur.com/vdwAYSI.png" material="Materials/Transparent Colored" pos="0,0"/>
-				<sprite depth="4" name="Icon" atlas="ItemIconAtlas"  size="44,40" pos="135,-13" foregroundlayer="true"/>
-				<label depth="6" name="TextContent" font_size="28" color="[white]" justify="center" height="30" width="100" effect="outline" pos="20,-18"/>
-				<sprite depth="6" pos="50,-18" width="32" height="32" name="Negative" sprite="ui_game_symbol_x" color="[red]" />
-			</panel>
-		</rect>
-
-		<grid name="hud" pos="-200,63" rows="2" cols="1" width="200" cell_width="200" cell_height="65" repeat_content="false" side="right">
-			<rect width="200" height="65" controller="HUDStatBar" stat_type="ActiveItem" visible="{statvisible}">
-				<sprite depth="1" pos="0,0"  name="BarContent" sprite="{statimage|once}" height="1" width="1" />
-				<texture name="ItemBackground" depth="2" size="200,65" texture="@https://i.imgur.com/mL9Cnd9.png" material="Materials/Transparent Colored" pos="0,0"/>																					   
-				<sprite depth="4" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon}" size="44,40" pos="145,-10" color="{staticoncolor}" foregroundlayer="true" />
-				<label depth="6" name="TextContent" pos="5,-18" font_size="28" color="[white]" justify="center" text="{statcurrentwithmax}" height="30" width="140" effect="outline" />
-			</rect>
-		</grid>
-
-	</window>
 	<!-- End Wasteland UI Windows -->
 	
 	<!--#$-IGS BEGIN: Adding cursor area. -$#-->
@@ -680,18 +682,6 @@
 			<sprite depth="0" name="sprBackgroundBorder" sprite="ui_game_header_fill" type="sliced" color="[black]" />
 			<sprite depth="1" name="sprBackground" sprite="ui_game_header_fill" type="sliced" pos="3,-3" color="[lightGrey]"/>
 			<label depth="3" name="lblText" text="" pos="10,-6" font_size="25" overflow="resizefreely" />
-		</rect>
-	</window>
-
-	<!--#$-IGS BEGIN: Adding cursor area. -$#-->
-	<window name="windowToolbelt" width="603" height="78" depth="5" anchor="CenterBottom" pos="-313, 87" backgroundcolor="[black]" controller="ToolbeltWindow" visible="{toolbeltvisible}" cursor_area="true">
-	<!--#$-IGS END.-$#-->
-
-		<rect>
-			<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" on_press="true" />
-			<grid depth="1" name="inventory" rows="1" cols="8" pos="3,-3" cell_width="75" cell_height="75" controller="Toolbelt" repeat_content="true">
-				<item_stack name="0"/>
-			</grid>
 		</rect>
 	</window>
 
@@ -2641,6 +2631,7 @@
 				<togglebutton name="toggleDecorations" caption_key="xuiDebugMenuDecorations" width="290" height="32" depth="3" />
 				<togglebutton name="toggleEntityTasks" caption_key="xuiDebugMenuEntityTasks" width="290" height="32" depth="3" />
 				<togglebutton name="toggleLightPerformance" caption_key="xuiDebugMenuShowLightPerf" width="290" height="32" depth="3" />
+        <togglebutton name="toggleStabilityGlue" caption_key="xuiDebugMenuShowStabilityGlue" width="290" height="32" depth="3" />
 			</grid>
 
 		</panel>
