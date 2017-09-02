@@ -1,12 +1,15 @@
 /*
-!/Data
+!/_OFFLINE_
+!/_ONLINE_
+/Data
+/Data/Config
 /Data/Bundles
 /Data/Prefabs
 /Data/Prefabs - Vanilla
 /Data/UMATextures
 /Data/Worlds
-/Data/Config/XUi_Menu
-!/Images
+/Images
+/Mods
 !/Patches
 
 /Data/Config/archetypes.xml
@@ -39,3 +42,7 @@
 /Data/Config/vehicles.xml
 /Data/Config/weathersurvival.xml
 /Data/Config/XML.txt
+/Data/Config/xui.xml
+/Data/Config/XUi/controls.xml
+/Data/Config/XUi/styles.xml
+/Data/Config/XUi/windows.xml

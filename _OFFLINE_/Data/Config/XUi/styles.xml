@@ -33,19 +33,19 @@
 		<!-- Begin Named Wasteland Styles -->
 		<style_entry name="servertext" value="Guppy's Wasteland UI"/>
 		<style_entry name="xpcolor" value="255,255,0,255"/>
-		<style_entry name="compassborder" value="@https://i.imgur.com/GqO0IhX.png"/>
-		<style_entry name="compassbg" value="@https://i.imgur.com/loLj5NS.png"/>
-		<style_entry name="toolbelt" value="@https://i.imgur.com/gs5LIsB.png"/>
-		<style_entry name="toolbeltbg" value="@https://i.imgur.com/wi8mVvY.png"/>
-		<style_entry name="serverbg" value="@https://i.imgur.com/mgaBqvw.png"/>
-		<style_entry name="buffs" value="@https://i.imgur.com/AZ8tQbP.png"/>
-		<style_entry name="collected" value="@https://i.imgur.com/vdwAYSI.png"/>
-		<style_entry name="activeitem" value="@https://i.imgur.com/mL9Cnd9.png"/>
-		<style_entry name="time" value="@https://i.imgur.com/jYCeubh.png"/>
-		<style_entry name="vehicle" value="@https://i.imgur.com/WzM5fPD.png"/>
-		<style_entry name="vehiclebg" value="@https://i.imgur.com/87rXQgE.png"/>
-		<style_entry name="xp" value="@http://i.imgur.com/dnU4O8O.png"/>
-		<style_entry name="xpbg" value="@http://i.imgur.com/b8rN3GO.png"/>
+		<style_entry name="compassborder" value="@file:Mods\GupUI\Textures\compass.png"/>
+		<style_entry name="compassbg" value="@file:Mods\GupUI\Textures\compassbg.png"/>
+		<style_entry name="toolbelt" value="@file:Mods\GupUI\Textures\toolbelt.png"/>
+		<style_entry name="toolbeltbg" value="@file:Mods\GupUI\Textures\foodwaterbg.png"/>
+		<style_entry name="serverbg" value="@file:Mods\GupUI\Textures\server.png"/>
+		<style_entry name="buffs" value="@file:Mods\GupUI\Textures\buff.png"/>
+		<style_entry name="collected" value="@file:Mods\GupUI\Textures\coll.png"/>
+		<style_entry name="activeitem" value="@file:Mods\GupUI\Textures\active.png"/>
+		<style_entry name="time" value="@file:Mods\GupUI\Textures\time.png"/>
+		<style_entry name="vehicle" value="@file:Mods\GupUI\Textures\vehicle.png"/>
+		<style_entry name="vehiclebg" value="@file:Mods\GupUI\Textures\vehiclebg.png"/>
+		<style_entry name="xp" value="@file:Mods\GupUI\Textures\xp.png"/>
+		<style_entry name="xpbg" value="@file:Mods\GupUI\Textures\xpbg.png"/>
 		<!-- End Named Wasteland Styles -->
 		<!-- 	
 			GLOBAL STYLE ENTRIES
